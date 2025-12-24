@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="/styles/Style.css">
+    <link rel="icon" type="image/png" href="/images/imagemSite.png">
+    
+</head>
+
+<body>
+    
+    <main class="card">
+        
+        <header>
+            <h1>Calculadora de IMC</h1>
+            <p><b>Descubra seu Índice de Massa Corporal</b></p>
+        </header>
+        
+        <section id="conteudoEscrito">
+            <h2>Dados Importantes Sobre o IMC</h2>
+            
+            <p>
+                Olá! Esta é uma calculadora de IMC (Índice de Massa Corporal). 
+                O IMC é uma medida utilizada para avaliar se uma pessoa está com peso saudável 
+                em relação à sua altura, conforme descrito na formula abaixo:
+            </p>
+            
+            <div id="formula">
+                IMC = P / (h x h)
+            </div>
+            
+            <p>
+                Onde "P" é a massa corporal em quilogramas e "h" é a altura em metros.
+                Após calcular o IMC, você pode interpretar o resultado com base nas seguintes categorias:
+            </p>
+            
+            <table id="tabelaDeIMC">
+                <tr>
+                    <th class="tituloTabela">Categoria</th>
+                    <th class="tituloTabela">IMC</th>
+                </tr>
+                <tr>
+                    <td>Abaixo do peso</td>
+                    <td>Menor que 18,5</td>
+                </tr>
+                <tr>
+                    <td>Peso normal</td>
+                    <td>18,5 – 24,9</td>
+                </tr>
+                <tr>
+                    <td>Sobrepeso</td>
+                    <td>25 – 29,9</td>
+                </tr>
+                <tr>
+                    <td>Obesidade</td>
+                    <td>30 ou mais</td>
+                </tr>
+            </table>
+            <p>
+                Vale salientar que estes dados são retirados da Organização Mundial da Saúde (OMS) e servem apenas como referência geral. Para mais informações sobre saúde e peso ideal, consulte um profissional de saúde.
+            </p>
+        </section>
+        
+        <h2>Vamos calcular o seu IMC!</h2>
+        <h3>Preencha os campos abaixo</h3>
+        
+        <section class="imcForm">
+
+            <!--formulario pra coletar os dados do usuario-->
+            <form class="formularioIMC" onsubmit="calcularIMC(event)">
+                
+                <div class="campo">
+                    <label id="pesoId" for="peso">Peso (kg)</label>
+                    <input type="number" id="peso" step="0.1" required title="Informe seu peso" placeholder="50">   
+                </div>
+                
+                <div class="campo">
+
+                    <label id="alturaId" for="altura">Altura (m)</label>
+                    <input type="number" id="altura" step="0.01" required title="Informe sua altura" placeholder="1.70">
+                    
+                </div>
+                <button type="submit">Calcular IMC</button>
+            </form>
+            
+        </section>
+        <div id="caixaDeErro">
+           <!--Área para exibir o resultado-->
+            <p id="mensagemErro"></p>
+            
+        </div>
+    </main>
+    
+    
+    <script src="/javaScript/script.js" defer></script>
+
+</body>
+</html>
